@@ -1,7 +1,7 @@
-package com.practiceProblem.java;
+//WAP to find factorial of a given number by taking user i/p
 import java.util.Scanner;
 
-//WAP to find factorial of a given number
+
 public class FactorialUsingRecursion {
 	
 	public static int factorial(int num) {
