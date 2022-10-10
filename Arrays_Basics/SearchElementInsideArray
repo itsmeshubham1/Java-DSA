@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+//WAP to search the element inside the array.
+
+public class SearchElement {
+	public static void main(String[] args) {
+		int [] arr= {10,20,30,40,50};
+		int flag =0;
+		System.out.println("Enter the element to search: ");
+		Scanner sc= new Scanner(System.in);
+		int search = sc.nextInt();
+		
+		for(int i=0; i<arr.length;i++) {
+			if(search==arr[i]) {
+				flag =1;
+				break;
+			}	
+		}
+		
+		if(flag==1)
+			System.out.println("Found");
+		else
+			System.out.println("Not found");
+	}
+}
