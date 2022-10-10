@@ -6,7 +6,7 @@ public class MinMaxInsideArray {
     
 		int[] arr= {10,25,35,15,45};
 		int min= arr[0];
-		int max=arr[0];
+		int max=Integer.MIN_VALUE;  //Means -infinity. Very small value
 		
     //logic
 		for(int i=0; i<arr.length; i++) {  
