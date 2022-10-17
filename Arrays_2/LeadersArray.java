@@ -1,10 +1,8 @@
 //WAP to fin leader's in an Array.
 //Leaders: ELement which don't have larger element on right side.
 
-public class LeaderaArray {
+public class LeadersArray {
 	
-  //In optimized approach we will traverse from rightmost side and check with its next left element.
-	//Time Complexity: O(n)
 	public static void LeadersInArrayOptimized(int arr[]) {
 		int largest= Integer.MIN_VALUE;
 		
@@ -28,7 +26,9 @@ public class LeaderaArray {
 //In this case we will need to use two for loops.
 //Our time complexity: O(n^2).
 
-
+//Optimized approach:
+//In optimized approach we will traverse from rightmost side and check with its next left element.
+//Time Complexity: O(n)
 //In order to print element in original order in optimized approach
 //Take another array : store the leader's value 
 //Print it in reverse order
