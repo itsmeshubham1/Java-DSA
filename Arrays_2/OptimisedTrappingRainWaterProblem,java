@@ -1,0 +1,66 @@
+/* IMP:
+ * Trapping RainWater Problem:   (Total amount of water it can hold & width should be taken.
+ * 
+ * Given n non-negative integers representing an elevation map where 
+ * the width of each bar is 1, 
+ * compute how much water it can trap after raining.
+ * 
+ * Here we are solving it without using additional space.
+ */
+
+
+public class OptimisedTrappingRainWaterProblem {
+	
+	public static void calculateWater(int arr[]) {
+		int left = 0;
+		int right = arr.length -1;
+		int leftMax = 0;  //max element present in left side of current element
+		int rightMax = 0; //max element present in right side of current element
+		int res = 0;
+		
+/*Idea:
+ * 
+ * At any point it will hold water if for that particular point 
+ * there will be higher element present at left and right side.
+ * e.g: For every i it can hold water iff
+ * leftMax > i < rightMax
+ */
+		
+		while (left < right) {
+			if(arr[left] <= arr[right]) {       // maintaining arr[right] > leftMax
+				if(arr[left] > leftMax)
+					leftMax = arr[left];
+				
+				else
+					res += leftMax - arr[left];
+				
+				left++;
+				
+			}
+			//opposite of if loop
+			else {								//maintaining arr[left] > rightMax
+				if(arr[right] > rightMax)
+					rightMax = arr[right];
+				
+				else
+					res += rightMax - arr[right];
+				
+				right--;
+				
+			}		
+		}
+		
+		System.out.println("Total unit of water it can hold is: "+ res);
+		
+	}
+
+	public static void main(String[] args) {
+		int [] arr= {3,5,1,4,2,6};
+		calculateWater(arr);
+	}
+
+}
+
+//Time Complexity: O(n)
+//Space Complexity: O(1)
+// Output: 8
